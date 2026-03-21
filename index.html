@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPM – Badan Penjaminan Mutu | Universitas Airlangga</title>
+<meta name="google-site-verification" content="SrTZawFSaLAONuV52vjH13dAEw3zOeO0J7W9G7wwpi8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fti.unand.ac.id/templates/ja_university_t3/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ─── RESET ─── */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;font-size:14px;color:#333;background:#f0f1f3;line-height:1.5;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+ul{list-style:none;}
+
+/* ─── VARIABLES ─── */
+:root{
+  --navy:  #002a6e;
+  --navy2: #003d9e;
+  --navy3: #1159c0;
+  --gold:  #f6a800;
+  --gold2: #d48f00;
+  --white: #fff;
+  --bg:    #f0f1f3;
+  --g1:    #f7f8fa;
+  --g2:    #e4e6eb;
+  --g3:    #b0b8c8;
+  --txt:   #1a1a2e;
+  --muted: #5a6275;
+  --r:     5px;
+  --sh:    0 2px 12px rgba(0,0,0,.09);
+}
+
+/* ════════════════════════════════
+   TOP UTILITY BAR
+════════════════════════════════ */
+#topbar{
+  background:var(--navy);
+  padding:0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+#topbar .w{
+  max-width:1280px;margin:0 auto;padding:5px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:6px;
+}
+.tb-l{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+.tb-l a{
+  color:rgba(255,255,255,.72);font-size:11.5px;
+  display:flex;align-items:center;gap:5px;transition:.15s;
+}
+.tb-l a:hover{color:#fff;}
+.tb-l i{font-size:10px;}
+.tb-r{display:flex;align-items:center;gap:6px;}
+.tb-r a{
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;transition:.2s;
+}
+.tb-r a:hover{background:var(--gold);color:var(--navy);}
+
+/* ════════════════════════════════
+   HEADER
+════════════════════════════════ */
+#hdr{
+  background:var(--white);
+  border-bottom:4px solid var(--gold);
+  box-shadow:0 2px 8px rgba(0,0,0,.07);
+}
+#hdr .w{
+  max-width:1280px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+}
+/* LOGO — pakai Header-Unair.webp */
+.hdr-logo a{display:flex;align-items:center;}
+.hdr-logo img{
+  height:64px;width:auto;
+  object-fit:contain;
+}
+/* Judul di samping logo */
+.hdr-title{
+  margin-left:14px;
+  border-left:2px solid var(--g2);
+  padding-left:14px;
+}
+.hdr-title .t1{font-size:17px;font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:-.2px;}
+.hdr-title .t2{font-size:11.5px;color:var(--muted);margin-top:3px;font-weight:500;}
+.hdr-title .t2 strong{color:var(--gold2);font-weight:700;}
+/* Right side */
+.hdr-r{display:flex;align-items:center;gap:10px;}
+.hdr-search{
+  display:flex;align-items:center;
+  border:1.5px solid var(--g2);border-radius:30px;
+  overflow:hidden;background:var(--g1);
+}
+.hdr-search input{
+  border:none;outline:none;padding:7px 14px;font-size:13px;
+  background:transparent;font-family:inherit;width:195px;color:var(--txt);
+}
+.hdr-search button{
+  background:var(--navy);color:#fff;border:none;
+  width:34px;height:34px;border-radius:50%;margin:2px;
+  cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:.2s;
+}
+.hdr-search button:hover{background:var(--navy3);}
+.hdr-lang{
+  display:flex;border:1.5px solid var(--g2);
+  border-radius:30px;overflow:hidden;font-size:12px;font-weight:700;
+}
+.hdr-lang a{padding:6px 13px;color:var(--muted);transition:.15s;}
+.hdr-lang a.on,.hdr-lang a:hover{background:var(--navy);color:#fff;}
+
+/* ════════════════════════════════
+   NAVBAR
+════════════════════════════════ */
+#nav{
+  background:var(--navy);
+  position:sticky;top:0;z-index:1000;
+  box-shadow:0 3px 10px rgba(0,0,0,.28);
+}
+#nav .w{max-width:1280px;margin:0 auto;padding:0 20px;}
+#nav ul.nm{display:flex;}
+#nav ul.nm>li{position:relative;}
+#nav ul.nm>li>a{
+  display:flex;align-items:center;gap:5px;
+  padding:13px 15px;color:#fff;font-size:13px;font-weight:700;
+  white-space:nowrap;transition:.15s;
+  border-bottom:3px solid transparent;
+}
+#nav ul.nm>li>a>i{font-size:9px;opacity:.65;}
+#nav ul.nm>li:hover>a,
+#nav ul.nm>li.act>a{
+  background:var(--gold);color:var(--navy);
+  border-bottom-color:var(--gold2);
+}
+/* dropdown */
+.dd{
+  display:none;position:absolute;top:100%;left:0;
+  background:#fff;min-width:248px;
+  border-radius:0 0 var(--r) var(--r);
+  box-shadow:0 8px 28px rgba(0,0,0,.15);
+  border-top:3px solid var(--gold);
+  z-index:2000;
+}
+#nav li:hover>.dd{display:block;}
+.dd li{position:relative;}
+.dd li a{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:9px 18px;color:var(--txt);font-size:13px;
+  border-bottom:1px solid #f2f3f6;transition:.15s;
+}
+.dd li a:hover{background:#f0f5ff;color:var(--navy);padding-left:22px;}
+.dd li a .ch{font-size:9px;color:var(--g3);}
+/* sub-dropdown */
+.sdd{
+  display:none;position:absolute;top:0;left:100%;
+  background:#fff;min-width:248px;
+  border-radius:0 var(--r) var(--r) 0;
+  box-shadow:0 8px 28px rgba(0,0,0,.15);
+  border-top:3px solid var(--gold);
+  z-index:2001;
+}
+.dd li:hover>.sdd{display:block;}
+
+/* ════════════════════════════════
+   HERO SLIDER
+════════════════════════════════ */
+#hero{position:relative;overflow:hidden;background:var(--navy);line-height:0;}
+.slide{display:none;position:relative;}
+.slide.on{display:block;}
+/* Full-width image */
+.sl-img{
+  width:100%;height:430px;
+  object-fit:cover;object-position:center top;
+  display:block;
+}
+/* CSS fallback backgrounds */
+.sl1{background:linear-gradient(125deg,#001540 0%,#002a6e 55%,#003d9e 100%);}
+.sl2{background:linear-gradient(125deg,#001030 0%,#001e58 55%,#002d80 100%);}
+.sl3{background:linear-gradient(125deg,#001228 0%,#00214a 55%,#003070 100%);}
+/* dark gradient overlay from left */
+.sl-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,20,60,.82) 38%,rgba(0,20,60,.25) 75%,transparent 100%);
+}
+/* caption */
+.sl-cap{
+  position:absolute;inset:0;
+  display:flex;align-items:center;
+  padding:0 80px;
+}
+.sl-body{max-width:600px;color:#fff;}
+.sl-body .tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold);color:var(--navy);
+  font-size:10px;font-weight:800;text-transform:uppercase;
+  letter-spacing:1.2px;padding:4px 13px;border-radius:20px;
+  margin-bottom:14px;
+}
+.sl-body h2{
+  font-size:28px;font-weight:800;line-height:1.25;
+  margin-bottom:10px;letter-spacing:-.3px;
+  text-shadow:0 2px 6px rgba(0,0,0,.3);
+}
+.sl-body p{
+  font-size:14px;opacity:.9;line-height:1.65;
+  max-width:480px;text-shadow:0 1px 4px rgba(0,0,0,.2);
+}
+.sl-body a.cta{
+  display:inline-flex;align-items:center;gap:7px;
+  margin-top:18px;background:var(--gold);color:var(--navy);
+  font-size:13px;font-weight:700;padding:9px 22px;border-radius:30px;
+  transition:.2s;
+}
+.sl-body a.cta:hover{background:#fff;color:var(--navy);}
+/* arrows */
+.sarr{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.15);backdrop-filter:blur(6px);
+  border:1.5px solid rgba(255,255,255,.25);color:#fff;
+  width:42px;height:42px;border-radius:50%;cursor:pointer;
+  font-size:20px;display:flex;align-items:center;justify-content:center;
+  z-index:10;transition:.2s;line-height:1;
+}
+.sarr:hover{background:rgba(255,255,255,.32);}
+.sl-prev{left:18px;}
+.sl-next{right:18px;}
+/* dots */
+.sdots{
+  position:absolute;bottom:16px;left:50%;
+  transform:translateX(-50%);display:flex;gap:8px;z-index:10;
+}
+.sd{
+  height:9px;width:9px;border-radius:30px;
+  background:rgba(255,255,255,.35);border:none;cursor:pointer;
+  transition:width .35s,background .25s;padding:0;
+}
+.sd.on{background:#fff;width:26px;}
+
+/* ════════════════════════════════
+   BREADCRUMB
+════════════════════════════════ */
+.crumb{
+  background:#fff;border-bottom:1px solid var(--g2);
+  padding:8px 0;font-size:12px;
+}
+.crumb .w{
+  max-width:1280px;margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;gap:6px;color:var(--muted);
+}
+.crumb a{color:var(--navy2);font-weight:600;}
+.crumb a:hover{text-decoration:underline;}
+.crumb i{font-size:9px;color:var(--g3);}
+
+/* ════════════════════════════════
+   MAIN GRID
+════════════════════════════════ */
+.mg{
+  max-width:1280px;margin:22px auto;padding:0 20px;
+  display:grid;grid-template-columns:1fr 298px;gap:22px;
+}
+
+/* ─── SHARED CARD ─── */
+.bx{
+  background:#fff;border-radius:var(--r);
+  padding:20px 22px;margin-bottom:20px;
+  box-shadow:var(--sh);
+}
+
+/* ─── SECTION HEADER ─── */
+.sh{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:18px;
+}
+.sh h3{
+  font-size:15px;font-weight:800;color:var(--navy);
+  position:relative;padding-left:13px;
+}
+.sh h3::before{
+  content:'';position:absolute;left:0;top:1px;bottom:1px;
+  width:4px;background:var(--gold);border-radius:2px;
+}
+.sh a.more{
+  font-size:12px;font-weight:600;color:var(--navy2);
+  display:flex;align-items:center;gap:4px;
+}
+.sh a.more:hover{color:var(--gold2);}
+
+/* ════════════════════════════════
+   FEATURED NEWS (2-col)
+════════════════════════════════ */
+.fn{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:18px;
+  margin-bottom:20px;padding-bottom:20px;
+  border-bottom:1px solid var(--g2);
+}
+.fn-img{position:relative;border-radius:var(--r);overflow:hidden;}
+.fn-img img{
+  width:100%;height:200px;object-fit:cover;
+  transition:transform .35s;
+}
+.fn-img:hover img{transform:scale(1.04);}
+.fn-badge{
+  position:absolute;top:10px;left:10px;
+  background:var(--gold);color:var(--navy);
+  font-size:9.5px;font-weight:800;text-transform:uppercase;
+  letter-spacing:.7px;padding:3px 10px;border-radius:20px;
+}
+.fn-info{display:flex;flex-direction:column;justify-content:center;}
+.fn-cat{font-size:10px;font-weight:700;color:var(--gold2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+.fn-ttl{font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;display:block;margin-bottom:8px;}
+.fn-ttl:hover{color:var(--navy3);}
+.fn-exc{font-size:12.5px;color:var(--muted);line-height:1.65;}
+.fn-meta{font-size:11px;color:var(--g3);margin-top:10px;display:flex;gap:14px;flex-wrap:wrap;}
+.fn-meta i{color:var(--gold2);margin-right:3px;}
+.fn-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:12px;background:var(--navy);color:#fff;
+  font-size:12px;font-weight:600;padding:7px 16px;
+  border-radius:20px;transition:.2s;width:fit-content;
+}
+.fn-btn:hover{background:var(--navy3);}
+
+/* ════════════════════════════════
+   NEWS GRID (6 kartu)
+════════════════════════════════ */
+.ngrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.nc{
+  display:flex;gap:11px;
+  padding-bottom:13px;margin-bottom:13px;
+  border-bottom:1px solid var(--g2);
+}
+.nc:last-child,.nc:nth-last-child(2):nth-child(odd){border:none;margin:0;padding:0;}
+.nc-img{
+  width:88px;height:62px;flex-shrink:0;
+  border-radius:var(--r);overflow:hidden;background:var(--g2);
+}
+.nc-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+.nc-img:hover img{transform:scale(1.07);}
+.nc-cat{font-size:9.5px;font-weight:700;color:var(--gold2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;}
+.nc-ttl{font-size:12.5px;font-weight:600;color:var(--txt);line-height:1.45;display:block;margin-bottom:4px;}
+.nc-ttl:hover{color:var(--navy2);}
+.nc-dt{font-size:11px;color:var(--g3);display:flex;align-items:center;gap:4px;}
+
+/* ════════════════════════════════
+   KEGIATAN LIST
+════════════════════════════════ */
+.klist{}
+.ki{
+  display:flex;gap:13px;
+  padding:12px 0;border-bottom:1px solid var(--g2);
+}
+.ki:last-child{border:none;}
+.ki-ico{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;margin-top:2px;
+}
+.ki-ttl{font-size:13px;font-weight:600;color:var(--txt);line-height:1.45;display:block;}
+.ki-ttl:hover{color:var(--navy2);}
+.ki-meta{font-size:11px;color:var(--g3);margin-top:4px;display:flex;gap:12px;flex-wrap:wrap;}
+.ki-meta i{color:var(--gold2);margin-right:2px;}
+
+/* ════════════════════════════════
+   PENGUMUMAN
+════════════════════════════════ */
+.plist{}
+.pi{
+  display:flex;gap:10px;padding:10px 0;
+  border-bottom:1px solid var(--g2);align-items:flex-start;
+}
+.pi:last-child{border:none;}
+.pi-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;margin-top:5px;
+}
+.pi a{font-size:13px;color:var(--txt);line-height:1.5;}
+.pi a:hover{color:var(--navy2);}
+
+/* ════════════════════════════════
+   STATISTICS
+════════════════════════════════ */
+.stat-wrap{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,var(--navy3) 100%);
+  border-radius:var(--r);padding:20px 22px;margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.stat-wrap::after{
+  content:'';position:absolute;
+  right:-40px;top:-40px;width:200px;height:200px;
+  border-radius:50%;background:rgba(255,255,255,.04);
+}
+.stat-wrap::before{
+  content:'';position:absolute;
+  left:60%;bottom:-60px;width:150px;height:150px;
+  border-radius:50%;background:rgba(255,255,255,.03);
+}
+.stat-wrap .sh h3{color:#fff;}
+.stat-wrap .sh h3::before{background:var(--gold);}
+.sgrid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;position:relative;z-index:1;
+}
+.si{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r);padding:15px 10px;text-align:center;
+}
+.si .num{font-size:29px;font-weight:800;color:var(--gold);line-height:1;}
+.si .lbl{font-size:11px;color:rgba(255,255,255,.85);margin-top:6px;line-height:1.35;}
+
+/* ════════════════════════════════
+   MITRA AKREDITASI
+════════════════════════════════ */
+.pgrid{
+  display:flex;flex-wrap:wrap;gap:10px;
+  justify-content:center;align-items:center;
+}
+.pm{
+  width:100px;height:60px;border:1.5px solid var(--g2);
+  border-radius:var(--r);background:var(--g1);
+  display:flex;align-items:center;justify-content:center;
+  padding:8px;overflow:hidden;transition:.2s;
+}
+.pm:hover{border-color:var(--navy2);box-shadow:0 2px 10px rgba(0,42,110,.12);}
+.pm img{max-width:100%;max-height:100%;object-fit:contain;}
+.pm span{font-size:11px;font-weight:700;color:var(--navy);text-align:center;}
+
+/* ════════════════════════════════
+   SIDEBAR WIDGETS
+════════════════════════════════ */
+.wg{
+  background:#fff;border-radius:var(--r);
+  margin-bottom:18px;box-shadow:var(--sh);overflow:hidden;
+}
+.wg-hd{
+  background:var(--navy);color:#fff;
+  padding:11px 16px;font-size:13.5px;font-weight:700;
+  display:flex;align-items:center;gap:8px;
+}
+.wg-hd i{color:var(--gold);}
+.wg-bd{padding:14px 16px;}
+
+/* quick links */
+.ql{}
+.ql li{border-bottom:1px solid var(--g2);}
+.ql li:last-child{border:none;}
+.ql a{
+  display:flex;align-items:center;gap:9px;
+  padding:9px 2px;font-size:13px;color:var(--txt);
+  font-weight:500;transition:.15s;
+}
+.ql a:hover{color:var(--navy2);padding-left:6px;}
+.ql-ic{
+  width:25px;height:25px;border-radius:50%;
+  background:var(--g1);display:flex;align-items:center;
+  justify-content:center;font-size:10px;color:var(--navy2);
+  flex-shrink:0;transition:.15s;
+}
+.ql a:hover .ql-ic{background:var(--navy);color:#fff;}
+
+/* agenda */
+.aglist{}
+.ag{
+  display:flex;gap:10px;
+  padding:10px 0;border-bottom:1px solid var(--g2);
+}
+.ag:last-child{border:none;}
+.ag-date{
+  background:var(--navy);color:#fff;text-align:center;
+  min-width:44px;padding:6px 7px;border-radius:var(--r);flex-shrink:0;
+}
+.ag-date .d{font-size:22px;font-weight:800;line-height:1;}
+.ag-date .m{font-size:9px;text-transform:uppercase;letter-spacing:.5px;opacity:.85;}
+.ag-ttl{font-size:12px;font-weight:600;color:var(--txt);line-height:1.45;display:block;}
+.ag-ttl:hover{color:var(--navy2);}
+.ag-pl{font-size:11px;color:var(--g3);margin-top:3px;display:flex;align-items:center;gap:4px;}
+
+/* download */
+.dlist{}
+.di{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--g2);}
+.di:last-child{border:none;}
+.di-ic{
+  width:32px;height:32px;border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.di-ic.pdf{background:#fef0ef;color:#d32f2f;}
+.di-ic.doc{background:#e8f0fe;color:#1565c0;}
+.di a{font-size:12px;color:var(--txt);line-height:1.35;}
+.di a:hover{color:var(--navy2);}
+
+/* info card */
+.icard{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:var(--r);padding:18px;margin-bottom:18px;
+  text-align:center;color:#fff;box-shadow:var(--sh);
+}
+.icard h4{font-size:14px;font-weight:800;margin-bottom:8px;}
+.icard p{font-size:12px;line-height:1.7;opacity:.9;margin-bottom:14px;}
+.icard a.ib{
+  display:inline-block;background:var(--gold);color:var(--navy);
+  font-size:12px;font-weight:700;padding:8px 20px;
+  border-radius:20px;transition:.2s;
+}
+.icard a.ib:hover{background:#fff;}
+
+/* ════════════════════════════════
+   FOOTER
+════════════════════════════════ */
+#ft{background:#001440;color:#8fa0be;margin-top:26px;}
+/* Footer top */
+.ft-top{
+  max-width:1280px;margin:0 auto;padding:38px 20px 26px;
+  display:grid;grid-template-columns:2.3fr 1fr 1fr 1fr;gap:32px;
+}
+/* About */
+.ft-about .fl{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
+.fl img{
+  height:54px;width:auto;
+  /* Invert logo to white on dark background */;
+}
+.fl .fn{font-size:14px;font-weight:800;color:#fff;line-height:1.3;}
+.ft-about>p{font-size:12.5px;line-height:1.8;margin-bottom:16px;}
+.fct{list-style:none;}
+.fct li{display:flex;gap:10px;font-size:12.5px;margin-bottom:10px;}
+.fct li i{color:var(--gold);flex-shrink:0;margin-top:2px;width:14px;}
+.fss{display:flex;gap:8px;margin-top:16px;}
+.fss a{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.08);color:#8fa0be;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;transition:.2s;
+}
+.fss a:hover{background:var(--gold);color:var(--navy);}
+/* Col */
+.fc h5{
+  color:#fff;font-size:13px;font-weight:800;
+  margin-bottom:14px;padding-bottom:9px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.fc ul{list-style:none;}
+.fc ul li{margin-bottom:9px;}
+.fc ul li a{
+  color:#8fa0be;font-size:12.5px;
+  display:flex;align-items:center;gap:6px;transition:.15s;
+}
+.fc ul li a:hover{color:var(--gold);}
+.fc ul li a::before{content:"›";color:var(--gold);font-size:16px;font-weight:700;}
+/* Bottom strip */
+.ft-bot{
+  background:#000d2e;
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:13px 20px;
+}
+.ft-bot .w{
+  max-width:1280px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:8px;
+}
+.ft-bot p{font-size:12px;color:#3a4a62;}
+.ft-bot .bls a{color:#3a4a62;font-size:12px;margin-left:16px;transition:.2s;}
+.ft-bot .bls a:hover{color:#fff;}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media(max-width:1000px){
+  .mg{grid-template-columns:1fr;}
+  .ft-top{grid-template-columns:1fr 1fr;}
+  .ngrid{grid-template-columns:1fr;}
+  .fn{grid-template-columns:1fr;}
+  .sl-img{height:290px;}
+}
+@media(max-width:640px){
+  .ft-top{grid-template-columns:1fr;}
+  .sgrid{grid-template-columns:1fr 1fr;}
+  .sl-cap{padding:0 20px;}
+  .sl-body h2{font-size:19px;}
+  .hdr-title .t1{font-size:15px;}
+  #nav ul.nm>li>a{padding:12px 10px;font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ██████████ TOP BAR ██████████ -->
+<div id="topbar">
+  <div class="w">
+    <div class="tb-l">
+      <a href="#"><i class="fa fa-clock"></i> Senin – Jumat &nbsp;08.00 – 16.30 WIB</a>
+      <a href="mailto:admin@bpm.unair.ac.id"><i class="fa fa-envelope"></i> admin@bpm.unair.ac.id</a>
+      <a href="tel:+62315993433"><i class="fa fa-phone"></i> (031) 5993433</a>
+    </div>
+    <div class="tb-r">
+      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ██████████ HEADER ██████████ -->
+<header id="hdr">
+  <div class="w">
+    <div class="hdr-logo" style="display:flex;align-items:center;">
+      <a href="#">
+        <!-- LOGO dari URL yang diminta -->
+        <img
+          src="https://unair.ac.id/wp-content/uploads/2021/03/Header-Unair.webp"
+          alt="Universitas Airlangga">
+      </a>
+      <div class="hdr-title">
+        <div class="t1">Badan Penjaminan Mutu</div>
+        <div class="t2">Universitas Airlangga &nbsp;·&nbsp; <strong>Excellence with Morality</strong></div>
+      </div>
+    </div>
+    <div class="hdr-r">
+      <div class="hdr-search">
+        <input type="text" placeholder="Cari berita, kegiatan...">
+        <button type="button"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="hdr-lang">
+        <a href="#" class="on">ID</a>
+        <a href="#">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ██████████ NAVBAR ██████████ -->
+<div id="nav">
+  <div class="w">
+    <ul class="nm">
+      <li class="act"><a href="#">Beranda</a></li>
+      <li>
+        <a href="#">Tentang BPM <i class="fa fa-chevron-down"></i></a>
+        <ul class="dd">
+          <li><a href="#">Profil BPM</a></li>
+          <li><a href="#">Visi, Misi &amp; Tujuan</a></li>
+          <li><a href="#">Struktur Organisasi</a></li>
+          <li><a href="#">SPM &amp; GPM</a></li>
+          <li><a href="#">Tupoksi Bidang</a></li>
+          <li><a href="#">Hubungi Kami</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">SPMI <i class="fa fa-chevron-down"></i></a>
+        <ul class="dd">
+          <li><a href="#">Audit Mutu Internal</a></li>
+          <li><a href="#">Pengukuran</a></li>
+          <li><a href="#">Peta Proses</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Akreditasi <i class="fa fa-chevron-down"></i></a>
+        <ul class="dd">
+          <li>
+            <a href="#">BAN-PT <span class="ch"><i class="fa fa-chevron-right"></i></span></a>
+            <ul class="sdd">
+              <li><a href="#">Akreditasi Minimum</a></li>
+              <li><a href="#">Status Akreditasi</a></li>
+              <li><a href="#">ISK APT &amp; APS 2020</a></li>
+              <li><a href="#">IPEPA 2021</a></li>
+              <li><a href="#">IAPS 4.0 BAN-PT</a></li>
+              <li><a href="#">Peringkat &amp; Nilai</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LAM-PTKes</a></li>
+          <li><a href="#">LAMEMBA</a></li>
+          <li><a href="#">LAM INFOKOM</a></li>
+          <li><a href="#">LAMSAMA</a></li>
+          <li><a href="#">Internasional</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Berita <i class="fa fa-chevron-down"></i></a>
+        <ul class="dd">
+          <li><a href="#">Berita Umum</a></li>
+          <li><a href="#">Agenda</a></li>
+          <li><a href="#">Kegiatan</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Layanan <i class="fa fa-chevron-down"></i></a>
+        <ul class="dd">
+          <li><a href="#">Evaluasi Layanan</a></li>
+          <li><a href="#">Sim QA</a></li>
+          <li><a href="#">Sistem Informasi Akreditasi</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Download <i class="fa fa-chevron-down"></i></a>
+        <ul class="dd">
+          <li><a href="#">Repository</a></li>
+          <li><a href="#">Undang-Undang</a></li>
+          <li><a href="#">PERMENRISTEKDIKTI</a></li>
+          <li><a href="#">Peraturan Presiden</a></li>
+          <li><a href="#">Peraturan Pemerintah</a></li>
+          <li><a href="#">Permendikbud</a></li>
+          <li><a href="#">Peraturan BAN-PT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ██████████ HERO SLIDER ██████████ -->
+<div id="hero">
+
+  <!-- SLIDE 1 — gambar anti-gratifikasi asli dari server BPM -->
+  <div class="slide on sl1">
+    <img class="sl-img"
+      src="https://bpm.unair.ac.id/wp-content/uploads/2019/05/slider-anti-gratifikasi-1920x750.jpg"
+      alt="Workshop SPMI BPM UNAIR"
+      onerror="this.style.display='none'">
+    <div class="sl-ov"></div>
+    <div class="sl-cap">
+      <div class="sl-body">
+        <div class="tag"><i class="fa fa-shield-check" style="font-size:11px;"></i> Penjaminan Mutu</div>
+        <h2>Workshop Sistem Penjaminan Mutu Internal (SPMI) Universitas Airlangga</h2>
+        <p>Badan Penjaminan Mutu menyelenggarakan Workshop SPMI bagi SPM, GPM dan KPS di lingkungan Universitas Airlangga. Kegiatan berlangsung di Sky Hall Meeting Room – Hotel Grand Dafam.</p>
+        <a href="#" class="cta">Baca Selengkapnya <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — Visitasi ASIIN -->
+  <div class="slide sl2">
+    <img class="sl-img"
+      src="https://bpm.unair.ac.id/wp-content/uploads/2024/06/Visitasi-ASIIN-Cluster-B-scaled.jpg"
+      alt="Visitasi ASIIN Cluster B UNAIR"
+      onerror="this.style.display='none'">
+    <div class="sl-ov"></div>
+    <div class="sl-cap">
+      <div class="sl-body">
+        <div class="tag"><i class="fa fa-globe" style="font-size:11px;"></i> Akreditasi Internasional</div>
+        <h2>Visitasi ASIIN Cluster B — Fakultas Sains dan Teknologi Universitas Airlangga</h2>
+        <p>Tim asesor ASIIN melaksanakan visitasi akreditasi di Kampus MERR-C untuk S1 Statistik, S1 Matematika, S1 Teknik Bio Medis, dan S1 Teknik Fisika.</p>
+        <a href="#" class="cta">Baca Selengkapnya <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — Workshop AMI 2025 -->
+  <div class="slide sl3">
+    <img class="sl-img"
+      src="https://bpm.unair.ac.id/wp-content/uploads/2025/08/Workshop-AMI-2025-scaled.jpg"
+      alt="Workshop AMI 2025 BPM UNAIR"
+      onerror="this.style.display='none'">
+    <div class="sl-ov"></div>
+    <div class="sl-cap">
+      <div class="sl-body">
+        <div class="tag"><i class="fa fa-clipboard-check" style="font-size:11px;"></i> AMI 2025</div>
+        <h2>Workshop Pengisian Instrumen Audit Mutu Internal 2025</h2>
+        <p>Dilaksanakan di Ruang Auditorium Ternate Lantai 1 Gedung ASEEC Kampus B Universitas Airlangga, 13 Agustus 2025.</p>
+        <a href="#" class="cta">Baca Selengkapnya <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <button class="sarr sl-prev" onclick="mv(-1)">&#8249;</button>
+  <button class="sarr sl-next" onclick="mv(1)">&#8250;</button>
+  <div class="sdots">
+    <button class="sd on" onclick="go(0)"></button>
+    <button class="sd" onclick="go(1)"></button>
+    <button class="sd" onclick="go(2)"></button>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="crumb">
+  <div class="w">
+    <a href="#">Beranda</a>
+    <i class="fa fa-chevron-right"></i>
+    <span>BPM – Badan Penjaminan Mutu</span>
+  </div>
+</div>
+
+<!-- ██████████ MAIN GRID ██████████ -->
+<div class="mg">
+
+  <!-- ══ LEFT / MAIN ══ -->
+  <main>
+
+    <!-- BERITA TERBARU -->
+    <div class="bx">
+      <div class="sh">
+        <h3>Berita Terbaru</h3>
+        <a href="#" class="more">Lihat Semua <i class="fa fa-arrow-right fa-xs"></i></a>
+      </div>
+
+      <!-- Featured 2-col -->
+      <div class="fn">
+        <div class="fn-img">
+          <img
+            src="https://bpm.unair.ac.id/wp-content/uploads/2025/12/BINUS-Benchmarking-BPM-UNAIR.jpg"
+            alt="BINUS Benchmarking BPM UNAIR"
+            onerror="this.style.background='#c5d8f5';this.style.height='200px';this.removeAttribute('src');">
+          <span class="fn-badge">Studi Banding</span>
+        </div>
+        <div class="fn-info">
+          <div class="fn-cat">Studi Banding</div>
+          <a href="https://bpm.unair.ac.id/bpm-universitas-airlangga-menjadi-tujuan-studi-banding-binus-university/" target="_blank" class="fn-ttl">
+            BPM Universitas Airlangga Menjadi Tujuan Studi Banding BINUS University
+          </a>
+          <div class="fn-exc">Badan Penjaminan Mutu (BPM) Universitas Airlangga menerima kunjungan studi banding dari Quality Management Center (QMC) dan Academic Resource Center (ARC) Universitas Bina Nusantara (BINUS University) dalam rangka penguatan sistem penjaminan mutu internal.</div>
+          <div class="fn-meta">
+            <span><i class="fa fa-calendar"></i> 19 Desember 2025</span>
+            <span><i class="fa fa-user"></i> Admin BPM</span>
+          </div>
+          <a href="#" class="fn-btn">Baca Selengkapnya <i class="fa fa-arrow-right fa-xs"></i></a>
+        </div>
+      </div>
+
+      <!-- 6-card grid -->
+      <div class="ngrid">
+
+        <div class="nc">
+          <div class="nc-img">
+            <img src="https://bpm.unair.ac.id/wp-content/uploads/2025/12/LPMPP-ITERA-Benchmarking-BPM-UNAIR-150x150.jpg"
+              alt="LPMPP ITERA" onerror="this.parentNode.style.background='#cce0f5';this.remove();">
+          </div>
+          <div>
+            <div class="nc-cat">Benchmarking</div>
+            <a href="#" class="nc-ttl">LPMPP ITERA Benchmarking ke Badan Penjaminan Mutu Universitas Airlangga</a>
+            <div class="nc-dt"><i class="fa fa-calendar fa-xs"></i> 1 Desember 2025</div>
+          </div>
+        </div>
+
+        <div class="nc">
+          <div class="nc-img">
+            <img src="https://bpm.unair.ac.id/wp-content/uploads/2025/11/Kunjungan-Studi-Banding-Universitas-Terbuka-150x150.jpg"
+              alt="Universitas Terbuka" onerror="this.parentNode.style.background='#cce0f5';this.remove();">
+          </div>
+          <div>
+            <div class="nc-cat">Studi Banding</div>
+            <a href="#" class="nc-ttl">Kunjungan Studi Banding dari Penjaminan Mutu Universitas Terbuka dalam Rangka Penguatan SPMI</a>
+            <div class="nc-dt"><i class="fa fa-calendar fa-xs"></i> 21 November 2025</div>
+          </div>
+        </div>
+
+        <div class="nc">
+          <div class="nc-img">
+            <img src="https://bpm.unair.ac.id/wp-content/uploads/2025/11/ASIIN-UNAIR-2025-150x150.jpg"
+              alt="ASIIN UNAIR 2025" onerror="this.parentNode.style.background='#cce0f5';this.remove();">
+          </div>
+          <div>
+            <div class="nc-cat">Akreditasi Internasional</div>
+            <a href="#" class="nc-ttl">UNAIR Mantapkan Langkah Global lewat Visitasi Akreditasi ASIIN</a>
+            <div class="nc-dt"><i class="fa fa-calendar fa-xs"></i> 14 November 2025</div>
+          </div>
+        </div>
+
+        <div class="nc">
+          <div class="nc-img">
+            <img src="https://bpm.unair.ac.id/wp-content/uploads/2025/10/Akreditasi-Unggul-BAN-PT-2025-150x150.jpg"
+              alt="Akreditasi Unggul" onerror="this.parentNode.style.background='#cce0f5';this.remove();">
+          </div>
+          <div>
+            <div class="nc-cat">BAN-PT</div>
+            <a href="#" class="nc-ttl">Program Studi Teknologi Hasil Perikanan UNAIR Raih Akreditasi Unggul dari BAN-PT</a>
+            <div class="nc-dt"><i class="fa fa-calendar fa-xs"></i> 30 Oktober 2025</div>
+          </div>
+        </div>
+
+        <div class="nc">
+          <div class="nc-img">
+            <img src="https://bpm.unair.ac.id/wp-content/uploads/2025/10/KMM-IPB-BPM-UNAIR-150x150.jpg"
+              alt="KMM IPB" onerror="this.parentNode.style.background='#cce0f5';this.remove();">
+          </div>
+          <div>
+            <div class="nc-cat">Benchmarking</div>
+            <a href="#" class="nc-ttl">BPM Universitas Airlangga Terima Kunjungan Benchmarking dari KMM IPB</a>
+            <div class="nc-dt"><i class="fa fa-calendar fa-xs"></i> 10 Oktober 2025</div>
+          </div>
+        </div>
+
+        <div class="nc">
+          <div class="nc-img">
+            <img src="https://bpm.unair.ac.id/wp-content/uploads/2025/09/Permendiktisaintek-39-2025-150x150.jpg"
+              alt="Permendiktisaintek" onerror="this.parentNode.style.background='#cce0f5';this.remove();">
+          </div>
+          <div>
+            <div class="nc-cat">Regulasi</div>
+            <a href="#" class="nc-ttl">Komparasi Permendiktisaintek No. 39/2025 vs. Permendikbudristek No. 53/2023</a>
+            <div class="nc-dt"><i class="fa fa-calendar fa-xs"></i> 16 September 2025</div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /berita -->
+
+    <!-- KEGIATAN TERKINI -->
+    <div class="bx">
+      <div class="sh">
+        <h3>Kegiatan Terkini</h3>
+        <a href="#" class="more">Lihat Semua <i class="fa fa-arrow-right fa-xs"></i></a>
+      </div>
+      <div class="klist">
+
+        <div class="ki">
+          <div class="ki-ico"><i class="fa fa-chalkboard-teacher"></i></div>
+          <div>
+            <a href="#" class="ki-ttl">Workshop Pengisian Instrumen Audit Mutu Internal 2025 — Ruang Auditorium Ternate Lantai 1 Gedung ASEEC Kampus B Universitas Airlangga</a>
+            <div class="ki-meta"><span><i class="fa fa-calendar"></i> 13 Agustus 2025</span><span><i class="fa fa-map-marker-alt"></i> Kampus B UNAIR</span></div>
+          </div>
+        </div>
+
+        <div class="ki">
+          <div class="ki-ico"><i class="fa fa-globe"></i></div>
+          <div>
+            <a href="#" class="ki-ttl">Visitasi ASIIN Cluster B Fakultas Sains dan Teknologi — S1 Statistik, S1 Matematika, S1 Teknik Bio Medis, S1 Teknik Fisika</a>
+            <div class="ki-meta"><span><i class="fa fa-calendar"></i> 13 Juni 2024</span><span><i class="fa fa-map-marker-alt"></i> Kampus MERR-C</span></div>
+          </div>
+        </div>
+
+        <div class="ki">
+          <div class="ki-ico"><i class="fa fa-university"></i></div>
+          <div>
+            <a href="#" class="ki-ttl">LPMPP ITERA Benchmarking ke Badan Penjaminan Mutu Universitas Airlangga</a>
+            <div class="ki-meta"><span><i class="fa fa-calendar"></i> 1 Desember 2025</span><span><i class="fa fa-map-marker-alt"></i> Gedung Kahuripan Lt. 3</span></div>
+          </div>
+        </div>
+
+        <div class="ki">
+          <div class="ki-ico"><i class="fa fa-handshake"></i></div>
+          <div>
+            <a href="#" class="ki-ttl">Kunjungan Studi Banding dari Penjaminan Mutu Universitas Terbuka dalam Rangka Penguatan Sistem Penjaminan Mutu Internal</a>
+            <div class="ki-meta"><span><i class="fa fa-calendar"></i> 21 November 2025</span><span><i class="fa fa-map-marker-alt"></i> BPM UNAIR</span></div>
+          </div>
+        </div>
+
+        <div class="ki">
+          <div class="ki-ico"><i class="fa fa-search"></i></div>
+          <div>
+            <a href="#" class="ki-ttl">BPM UNAIR Gelar FGD Telaah Instrumen Audit Mutu Internal untuk Perkuat Penjaminan Mutu Akademik</a>
+            <div class="ki-meta"><span><i class="fa fa-calendar"></i> 8 Desember 2025</span><span><i class="fa fa-map-marker-alt"></i> BPM UNAIR</span></div>
+          </div>
+        </div>
+
+        <div class="ki">
+          <div class="ki-ico"><i class="fa fa-users"></i></div>
+          <div>
+            <a href="#" class="ki-ttl">Workshop SPMI bagi Koordinator Program Studi (KPS) di Lingkungan Universitas Airlangga — Sky Hall Meeting Room, Hotel Grand Dafam</a>
+            <div class="ki-meta"><span><i class="fa fa-calendar"></i> Februari 2025</span><span><i class="fa fa-map-marker-alt"></i> Hotel Grand Dafam Surabaya</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /kegiatan -->
+
+    <!-- STATISTIK -->
+    <div class="stat-wrap">
+      <div class="sh"><h3>Statistik Penjaminan Mutu</h3></div>
+      <div class="sgrid">
+        <div class="si"><div class="num">73</div><div class="lbl">Akreditasi Internasional</div></div>
+        <div class="si"><div class="num">308</div><div class="lbl">QS World Ranking 2025</div></div>
+        <div class="si"><div class="num">9</div><div class="lbl">Kriteria Akreditasi BAN-PT</div></div>
+        <div class="si"><div class="num">178</div><div class="lbl">Prodi Terakreditasi Nasional</div></div>
+        <div class="si"><div class="num">2019</div><div class="lbl">Mulai IAPS 4.0 &amp; IAPT 3.0</div></div>
+        <div class="si"><div class="num">3</div><div class="lbl">Status Akreditasi Institusi</div></div>
+      </div>
+    </div>
+
+    <!-- PENGUMUMAN -->
+    <div class="bx">
+      <div class="sh">
+        <h3>Pengumuman</h3>
+        <a href="#" class="more">Lihat Semua <i class="fa fa-arrow-right fa-xs"></i></a>
+      </div>
+      <div class="plist">
+        <div class="pi"><div class="pi-dot"></div><a href="#">BPM UNAIR membuka layanan kunjungan studi banding — setiap Jumat minggu keempat: <strong>Februari | April | Juni | Agustus | November</strong></a></div>
+        <div class="pi"><div class="pi-dot"></div><a href="#">Website akreditasi UNAIR kini terintegrasi — akses di <strong>akreditasi.bpm.unair.ac.id</strong></a></div>
+        <div class="pi"><div class="pi-dot"></div><a href="#">BAN-PT menetapkan Peraturan No. 36 Tahun 2025 tentang Instrumen Akreditasi Program Studi untuk Status Terakreditasi dan Terakreditasi Unggul</a></div>
+        <div class="pi"><div class="pi-dot"></div><a href="#">Sistem Informasi Manajemen (SIM) Penjaminan Mutu UNAIR dapat diakses di <strong>https://qa.unair.ac.id</strong></a></div>
+        <div class="pi"><div class="pi-dot"></div><a href="#">📨 Pengajuan studi banding — kirimkan surat resmi kepada Ketua BPM via email: <strong>admin@bpm.unair.ac.id</strong></a></div>
+      </div>
+    </div>
+
+    <!-- MITRA AKREDITASI -->
+    <div class="bx">
+      <div class="sh"><h3>Mitra Akreditasi</h3></div>
+      <div class="pgrid">
+        <div class="pm"><img src="https://bpm.unair.ac.id/wp-content/uploads/2021/10/BAN-PT.png"     alt="BAN-PT"     onerror="this.style.display='none';this.parentNode.innerHTML='<span>BAN-PT</span>';"></div>
+        <div class="pm"><img src="https://bpm.unair.ac.id/wp-content/uploads/2021/10/LAM-PTKes.png" alt="LAM-PTKes" onerror="this.style.display='none';this.parentNode.innerHTML='<span>LAM-PTKes</span>';"></div>
+        <div class="pm"><img src="https://bpm.unair.ac.id/wp-content/uploads/2021/11/250-FIBAA.png"  alt="FIBAA"      onerror="this.style.display='none';this.parentNode.innerHTML='<span>FIBAA</span>';"></div>
+        <div class="pm"><img src="https://bpm.unair.ac.id/wp-content/uploads/2021/10/ASIIN.png"     alt="ASIIN"     onerror="this.style.display='none';this.parentNode.innerHTML='<span>ASIIN</span>';"></div>
+        <div class="pm"><img src="https://bpm.unair.ac.id/wp-content/uploads/2021/10/AACSB.png"     alt="AACSB"     onerror="this.style.display='none';this.parentNode.innerHTML='<span>AACSB</span>';"></div>
+        <div class="pm"><img src="https://bpm.unair.ac.id/wp-content/uploads/2021/10/AUN-QA.png"    alt="AUN-QA"    onerror="this.style.display='none';this.parentNode.innerHTML='<span>AUN-QA</span>';"></div>
+        <div class="pm"><img src="https://bpm.unair.ac.id/wp-content/uploads/2021/10/ABEST21.png"   alt="ABEST21"   onerror="this.style.display='none';this.parentNode.innerHTML='<span>ABEST21</span>';"></div>
+        <div class="pm"><span>LAMEMBA</span></div>
+        <div class="pm"><span>LAM INFOKOM</span></div>
+        <div class="pm"><span>LAMSAMA</span></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside>
+
+    <div class="wg">
+      <div class="wg-hd"><i class="fa fa-link"></i> Tautan Cepat</div>
+      <div class="wg-bd">
+        <ul class="ql">
+          <li><a href="https://qa.unair.ac.id" target="_blank"><span class="ql-ic"><i class="fa fa-external-link-alt"></i></span> Sim QA UNAIR</a></li>
+          <li><a href="https://akreditasi.bpm.unair.ac.id" target="_blank"><span class="ql-ic"><i class="fa fa-medal"></i></span> Sistem Informasi Akreditasi</a></li>
+          <li><a href="#"><span class="ql-ic"><i class="fa fa-chart-bar"></i></span> AIMS UNAIR</a></li>
+          <li><a href="#"><span class="ql-ic"><i class="fa fa-award"></i></span> Status Akreditasi Prodi</a></li>
+          <li><a href="#"><span class="ql-ic"><i class="fa fa-star"></i></span> Evaluasi Layanan BPM</a></li>
+          <li><a href="#"><span class="ql-ic"><i class="fa fa-folder-open"></i></span> Repository Dokumen</a></li>
+          <li><a href="https://www.unair.ac.id" target="_blank"><span class="ql-ic"><i class="fa fa-university"></i></span> Portal UNAIR</a></li>
+          <li><a href="#"><span class="ql-ic"><i class="fa fa-laptop"></i></span> E-Learning UNAIR</a></li>
+          <li><a href="#"><span class="ql-ic"><i class="fa fa-shield-alt"></i></span> PPID UNAIR</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="icard">
+      <h4>📅 Layanan Studi Banding</h4>
+      <p>Setiap Jumat di minggu keempat pada bulan:<br>
+      <strong>Feb · Apr · Jun · Agt · Nov</strong><br><br>
+      📨 Institusi yang berminat wajib mengirimkan surat permohonan resmi kepada Ketua BPM melalui email:</p>
+      <a href="mailto:admin@bpm.unair.ac.id" class="ib">admin@bpm.unair.ac.id</a>
+    </div>
+
+    <div class="wg">
+      <div class="wg-hd"><i class="fa fa-calendar-alt"></i> Agenda</div>
+      <div class="wg-bd">
+        <div class="aglist">
+          <div class="ag">
+            <div class="ag-date"><div class="d">13</div><div class="m">Agt</div></div>
+            <div><a href="#" class="ag-ttl">Workshop Pengisian Instrumen AMI 2025</a>
+            <div class="ag-pl"><i class="fa fa-map-marker-alt"></i> Auditorium Ternate Lt.1, ASEEC Kampus B</div></div>
+          </div>
+          <div class="ag">
+            <div class="ag-date"><div class="d">13</div><div class="m">Jun</div></div>
+            <div><a href="#" class="ag-ttl">Visitasi ASIIN Cluster B — FST UNAIR</a>
+            <div class="ag-pl"><i class="fa fa-map-marker-alt"></i> Ruang Sidang Pleno, Kampus MERR-C</div></div>
+          </div>
+          <div class="ag">
+            <div class="ag-date"><div class="d">28</div><div class="m">Feb</div></div>
+            <div><a href="#" class="ag-ttl">Layanan Studi Banding — Sesi Februari</a>
+            <div class="ag-pl"><i class="fa fa-map-marker-alt"></i> Gedung Kahuripan Lt. 3, Kampus C</div></div>
+          </div>
+          <div class="ag">
+            <div class="ag-date"><div class="d">25</div><div class="m">Apr</div></div>
+            <div><a href="#" class="ag-ttl">Layanan Studi Banding — Sesi April</a>
+            <div class="ag-pl"><i class="fa fa-map-marker-alt"></i> Gedung Kahuripan Lt. 3, Kampus C</div></div>
+          </div>
+          <div class="ag">
+            <div class="ag-date"><div class="d">27</div><div class="m">Jun</div></div>
+            <div><a href="#" class="ag-ttl">Layanan Studi Banding — Sesi Juni</a>
+            <div class="ag-pl"><i class="fa fa-map-marker-alt"></i> Gedung Kahuripan Lt. 3, Kampus C</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wg">
+      <div class="wg-hd"><i class="fa fa-download"></i> Download Terbaru</div>
+      <div class="wg-bd">
+        <div class="dlist">
+          <div class="di"><div class="di-ic pdf"><i class="fa fa-file-pdf"></i></div><a href="#">Peraturan BAN-PT No. 35 Tahun 2025 — Instrumen Akreditasi Perguruan Tinggi</a></div>
+          <div class="di"><div class="di-ic pdf"><i class="fa fa-file-pdf"></i></div><a href="#">Peraturan BAN-PT No. 36 Tahun 2025 — Instrumen Akreditasi Program Studi</a></div>
+          <div class="di"><div class="di-ic pdf"><i class="fa fa-file-pdf"></i></div><a href="#">IAPS 4.0 BAN-PT — Panduan Instrumen Akreditasi Program Studi</a></div>
+          <div class="di"><div class="di-ic pdf"><i class="fa fa-file-pdf"></i></div><a href="#">IPEPA BAN-PT — Instrumen Pemantauan &amp; Evaluasi Peringkat Akreditasi</a></div>
+          <div class="di"><div class="di-ic doc"><i class="fa fa-file-word"></i></div><a href="#">Permendikbudristek No. 53 Tahun 2023 — Penjaminan Mutu Pendidikan Tinggi</a></div>
+          <div class="di"><div class="di-ic pdf"><i class="fa fa-file-pdf"></i></div><a href="#">Peraturan BAN-PT No. 19 Tahun 2024 — Lembaga Akreditasi Mandiri</a></div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- /mg -->
+
+<!-- ██████████ FOOTER ██████████ -->
+<footer id="ft">
+  <div class="ft-top">
+
+    <div class="ft-about">
+      <div class="fl">
+        <!-- Logo sama seperti header, diinvert putih -->
+        <img
+          src="https://unair.ac.id/wp-content/uploads/2021/03/Header-Unair.webp"
+          alt="Universitas Airlangga"
+          onerror="this.onerror=null;this.src='https://bpm.unair.ac.id/wp-content/uploads/2021/10/BPM-Biru.png';">
+        <div class="fn">Badan Penjaminan Mutu<br>Universitas Airlangga</div>
+      </div>
+      <p>Badan Penjaminan Mutu (BPM) Universitas Airlangga adalah unsur penunjang yang membantu Rektor dalam melakukan penjaminan mutu akademik dan manajemen di lingkungan Universitas Airlangga. Sejak tahun 2019, standar manajemen mutu mengacu pada IAPS 4.0 dan IAPT 3.0 yang ditetapkan oleh BAN-PT dengan 9 kriteria utama sebagai tolok ukur penilaian mutu secara berkelanjutan.</p>
+      <ul class="fct">
+        <li><i class="fa fa-map-marker-alt"></i><span>Gedung Kahuripan Lantai 3, Kampus C Universitas Airlangga, Jl. Ir. H. Sukarno, Surabaya 60115</span></li>
+        <li><i class="fa fa-phone"></i><span>+62-031-5993433</span></li>
+        <li><i class="fa fa-mobile-alt"></i><span>+62 85852814554</span></li>
+        <li><i class="fa fa-envelope"></i><span>admin@bpm.unair.ac.id</span></li>
+        <li><i class="fa fa-clock"></i><span>Senin – Jumat: 08.00 – 16.30 WIB</span></li>
+      </ul>
+      <div class="fss">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="fc">
+      <h5>Tentang BPM</h5>
+      <ul>
+        <li><a href="#">Profil BPM</a></li>
+        <li><a href="#">Visi, Misi &amp; Tujuan</a></li>
+        <li><a href="#">Struktur Organisasi</a></li>
+        <li><a href="#">SPM &amp; GPM</a></li>
+        <li><a href="#">Tupoksi Bidang</a></li>
+        <li><a href="#">Hubungi Kami</a></li>
+      </ul>
+    </div>
+
+    <div class="fc">
+      <h5>Akreditasi</h5>
+      <ul>
+        <li><a href="#">BAN-PT</a></li>
+        <li><a href="#">Status Akreditasi</a></li>
+        <li><a href="#">LAM-PTKes</a></li>
+        <li><a href="#">LAMEMBA</a></li>
+        <li><a href="#">LAM INFOKOM</a></li>
+        <li><a href="#">LAMSAMA</a></li>
+        <li><a href="#">Akreditasi Internasional</a></li>
+      </ul>
+    </div>
+
+    <div class="fc">
+      <h5>Layanan</h5>
+      <ul>
+        <li><a href="https://qa.unair.ac.id" target="_blank">Sim QA UNAIR</a></li>
+        <li><a href="https://akreditasi.bpm.unair.ac.id" target="_blank">Sistem Informasi Akreditasi</a></li>
+        <li><a href="#">Evaluasi Layanan</a></li>
+        <li><a href="#">AIMS UNAIR</a></li>
+        <li><a href="#">Repository</a></li>
+        <li><a href="#">Download Center</a></li>
+        <li><a href="#">Studi Banding</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="ft-bot">
+    <div class="w">
+      <p>Copyright &copy; BPM UNAIR 2021 &nbsp;|&nbsp; Badan Penjaminan Mutu Universitas Airlangga. All Rights Reserved.</p>
+      <div class="bls">
+        <a href="#">Beranda</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ██████████ SCRIPTS ██████████ -->
+<script>
+// ── SLIDER ──
+let c = 0;
+const slides = document.querySelectorAll('#hero .slide');
+const dots   = document.querySelectorAll('#hero .sd');
+let tmr;
+
+function show(n){
+  slides[c].classList.remove('on');
+  dots[c].classList.remove('on');
+  c = ((n % slides.length) + slides.length) % slides.length;
+  slides[c].classList.add('on');
+  dots[c].classList.add('on');
+}
+function mv(d){ clearInterval(tmr); show(c + d); tick(); }
+function go(n){ clearInterval(tmr); show(n); tick(); }
+function tick(){ tmr = setInterval(() => show(c + 1), 5500); }
+tick();
+
+// ── NAV ACTIVE STATE ──
+document.querySelectorAll('#nav ul.nm > li > a').forEach(a => {
+  a.addEventListener('click', function(){
+    document.querySelectorAll('#nav ul.nm > li').forEach(l => l.classList.remove('act'));
+    this.closest('li').classList.add('act');
+  });
+});
+</script>
+
+</body>
+</html>
